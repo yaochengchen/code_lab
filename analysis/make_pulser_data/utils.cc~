@@ -1,0 +1,11 @@
+  Double_t ** FEE_re = new_Array2D<double>(8, 2049);
+  Double_t ** FEE_im = new_Array2D<double>(8, 2049);
+  
+  double ANT_V_theta_re[37][73][2049] = {0.};//theta: -90, -85, ..., 90; phi:0, 5, ..., 360
+  double ANT_V_theta_im[37][73][2049] = {0.};
+  double ANT_V_phi_re[37][73][2049] = {0.};//theta: -90, -85, ..., 90; phi:0, 5, ..., 360
+  double ANT_V_phi_im[37][73][2049] = {0.};
+  double ANT_H_theta_re[37][73][2049] = {0.};//theta: -90, -85, ..., 90; phi:0, 5, ..., 360
+  double ANT_H_theta_im[37][73][2049] = {0.};
+  double ANT_H_phi_re[37][73][2049] = {0.};//theta: -90, -85, ..., 90; phi:0, 5, ..., 360
+  double ANT_H_phi_im[37][73][2049] = {0.};
