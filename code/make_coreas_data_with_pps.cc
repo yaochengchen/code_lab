@@ -149,20 +149,20 @@ void make_coreas_data_with_pps(int start_run, int final_run, int cr_energy){
 	r3 = new TRandom3();
 	r3->SetSeed(final_run);
 	
-	string out_put_ntuple_name = "ntuple_position_factor_with_pps_iron_" + std::to_string(cr_energy) + ".root";
+	string out_put_ntuple_name = "ntuple_position_factor_with_pps_" + std::to_string(cr_energy) + ".root";
 	TFile *f_ntuple = new TFile(out_put_ntuple_name.c_str(),"RECREATE");
 	TNtuple *ntuple = new TNtuple("ntuple","t","Energy:ShowerTheta:ShowerPhi:EffectedArea:DSR_radius:Triggered_count:Total_count");
 
 
   
-  	string out_put_root_name = "make_coreas_data_position_factor_with_pps_iron_" + std::to_string(cr_energy) + ".root";
+  	string out_put_root_name = "make_coreas_data_position_factor_with_pps_" + std::to_string(cr_energy) + ".root";
  	TFile *make_coreas_data = new TFile(out_put_root_name.c_str(), "RECREATE");
  	TTree *make_Tree = new TTree("t","TAROGE data");
  	CreateDataTreeBranches(make_Tree);
  	
 	for(int run = start_run; run<=final_run; run++){
 		
-		const string coreas_root = Form("/mnt/network_hdd/process_coreas_data/iron/Coreas-t4-r%06d.root", run);
+		const string coreas_root = Form("/mnt/network_hdd/process_coreas_data/proton/Coreas-t4-r%06d.root", run);
 		// 0 means exist, -1 means not
 		if(access(coreas_root.c_str(), F_OK)!=0)
 		{
